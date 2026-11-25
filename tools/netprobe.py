@@ -98,6 +98,12 @@ def main():
             dispositivos_ativos.append({"ip": ip_str, "mac": mac_address or "Desconhecido", "status": "Online (ICMP)"})
         elif mac_address:
             dispositivos_ativos.append({"ip": ip_str, "mac": mac_address, "status": "Online (ARP - Firewall Detectado)"})
+        else:
+            print(f"{ip_str} | Offline (sem resposta)", flush=True)
+            continue
+
+        dispositivo = dispositivos_ativos[-1]
+        print(f"{ip_str} | {dispositivo['status']} | MAC: {dispositivo['mac']}", flush=True)
 
     print(f"[*] Passo 3: Realizando captura SYN-ACK para portas {porta_ini} a {porta_fim}...")
     tabela_final = []
