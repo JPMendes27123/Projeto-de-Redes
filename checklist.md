@@ -364,20 +364,19 @@ A sintaxe de `tools/netprobe.py` foi validada com `compile(..., 'exec')`, sem ex
 **Objetivo:** Repetir a demonstração completa sem depender de improviso e saber recuperar falhas comuns.
 
 **Passo a passo**
-- [ ] Executar servidores HTTP e DNS em B; iniciar Wireshark; rodar o cliente em A.
-- [ ] Verificar a sequência: GET 200, POST confirmado, DNS A com IP_B, pacotes e filtros visíveis.
-- [ ] Executar novamente após reiniciar os serviços para detectar conflitos de porta e dependências ocultas.
-- [ ] Simular servidor desligado e IP incorreto para verificar mensagens de erro do cliente.
-- [ ] Testar em outra máquina/VM do grupo para identificar configurações locais não documentadas.
-- [ ] Registrar resultados em matriz simples com Passou/Falhou, data, responsável e evidência.
-- [ ] Conferir se há descarte reportado na captura; se houver, reduzir tráfego e corrigir o ambiente antes da demonstração.
+- [ ] Seguir o roteiro do NetProbe no README e verificar ICMP, ARP, associação IP/MAC, status em tempo real e portas TCP.
+- [x] Parar e reiniciar o serviço usado como porta de teste e confirmar o resultado a cada rodada.
+- [ ] Verificar o comportamento com um IP sem equipamento e uma entrada inválida.
+- [ ] Repetir o roteiro em outra máquina ou VM do grupo e registrar dificuldades.
+- [x] Registrar os resultados da primeira rodada na matriz com data, responsável e evidência.
+- [x] Conferir o contador de descartes da captura original.
 
 **Critérios de aceite**
 - [ ] Os cinco critérios do professor são cumpridos de ponta a ponta.
 - [ ] Teste é reproduzível a partir do README.
 - [ ] Problemas conhecidos e suas soluções estão documentados.
 
-**Evidência esperada:** Matriz de testes preenchida e link do arquivo `.pcapng`.
+**Evidência esperada:** [Matriz de testes](docs/matriz-testes.md) e [captura ARP](docs/evidencias/teste-arp-wifi-evidencia.pcapng).
 
 **Notas / PR / commit:** ______________________________________________
 
